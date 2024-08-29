@@ -1,0 +1,56 @@
+<div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+  <div class="px-4 sm:px-0">
+    <h3 class="text-base font-semibold leading-7 text-gray-900">
+      Applicant Information
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+      Personal details and application.
+    </p>
+  </div>
+  <div class="mt-6 border-t border-gray-100">
+    <dl class="divide-y divide-gray-100">
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">Full Name</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          {{ userDetails?.userName }}
+        </dd>
+      </div>
+
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Email address
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          {{ userDetails?.email }}
+        </dd>
+      </div>
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">
+          Phone Number
+        </dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          {{ userDetails?.phoneNumber }}
+        </dd>
+      </div>
+      <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          {{ userDetails?.state }} {{ userDetails?.city }}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<ag-grid-angular
+  [rowData]="rowData"
+  [columnDefs]="colDefs"
+  class="ag-theme-quartz"
+  style="height: 500px"
+  [defaultColDef]="defaultColDef"
+  rowSelection="multiple"
+  [pagination]="pagination"
+  [paginationPageSize]="paginationPageSize"
+  [paginationPageSizeSelector]="paginationPageSizeSelector"
+  [rowClassRules]="rowClassRules"
+/>
